@@ -1,0 +1,66 @@
+/* ================================== */
+/* Regles de css pour eval-container */
+/* ================================== */
+
+.eval-container h2 { font-weight: bold; }
+.eval-container .eval-display .eval-star, p
+{
+  display: inline-block;
+  color: #03E9A6; font-size: 20px;
+}
+.eval-container .eval-display .eval-star
+{
+  background: #03E9A6;
+  border-radius: 100%;
+  width: 33px; height: 31px;
+  text-align: center;
+}
+.eval-container .eval-display .eval-star .fa-star
+{
+  color: white;
+  font-size: 18px;
+}
+
+/* ================================== */
+/* Regles de css du com-container */
+/* ================================== */
+
+.com-container .author { margin-top: 30px; }
+.com-container .author .first-letter, .informations { display: inline-block; }
+.com-container .author .first-letter
+{
+  background: #D7D8D7;
+  height: 50px; width: 50px;
+  border-radius: 100%;
+  text-align: center;
+  line-height: 2.5;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  float: left;
+}
+.com-container .author .informations { margin-left: 8px; }
+.com-container .author .informations .name .name-display, .checked { display: inline-block; }
+.com-container .author .informations .name .name-display { color: #4981D4; font-weight: bold; }
+.com-container .author .informations .name .checked
+{
+  background: #4CE6A2;
+  height: 30px; width: 30px;
+  border-radius: 100%;
+  text-align: center;
+  color: white;
+  line-height: 2;
+  float: right;
+  margin-left: 20px;
+}
+.com-container .author .informations .date-posted { margin-top: -5px; }
+.com-container .author .informations .date-posted p
+{
+  font-size: 13px;
+  color: darkgrey;
+  font-weight: bold;
+}
+
+/* ================================== */
+/* Regles de css du association-container */
+/* ================================== */
