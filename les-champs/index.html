@@ -12,17 +12,46 @@
 		<input type="submit" id="send" name="send" value="Envoye">
 	</form>
 </body>
+<!-- Ca c'est un cdn, ca permet d'avoir un fichier type librairie comme Jquery sans le telecharger -->
 <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
+
 <script>
+	// Donc la basique on bind un event au clique sur le bouton submit
 	$("#send").click((e) => {
+		// Ca c'est pour couper le comportement par defaut des boutons submit qui est d'envoyer le formulaire
+		// La comme il y'a du traitement sur le text, soit tu le fais dans le back, et la c'est un peu con
+		// Mais comme tu m'as dit que c'etait a faire en js je suppose que du coup, tu dois envoyer les infos
+		// Correctement traiter directement dans le back
 		e.preventDefault();
+
 		let title = $('#text').val();
 		let content = $('#content').val();
 
-		console.log(title + " " + content);		
+		// Je suppose ici que content est en required et que son contenu est au minimum de 50 caracteres
+		// sinon il te suffit de rajouter un truc du genre
+		// if (content.length < 50)
+		// {
+		// 	alert("Le champ content doit avoir au moins 50 caracters !");
+		// 	return (1);
+		// }
+
+		// Donc si le champ title est completement vide (title.length renvoie le nombre de caracteres dans une chaine)
+		if (!(title.length))
+		{
+			// Donc on commence ofc a 50
+			let i = 50;
+			// Si le 50e caractere n'est pas un espace (parce que si c'est le cas on tronque directement)
+			// Alors tant que le caractere n'est pas un espace, ++i
+			if (content[i] != ' ')
+				while (++i < content.length && content[i] != ' ');
+			title = content.substr(0, i) + "...";
+		}
+		// else
+		// pas de traitement on envoie direct
 	});
 </script>
+
 </html>
