@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Test des champs</title>
+</head>
+<body>
+	<form>
+		<input type="text" id="text"/>
+		<textarea name="content" id="content"></textarea>
+		<input type="submit" id="send" name="send" value="Envoye">
+	</form>
+</body>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script>
+	$("#send").click((e) => {
+		e.preventDefault();
+		let title = $('#text').val();
+		let content = $('#content').val();
+
+		console.log(title + " " + content);		
+	});
+</script>
+</html>
